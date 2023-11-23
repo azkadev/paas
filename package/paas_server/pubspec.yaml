@@ -13,8 +13,11 @@ dependencies:
   intl: ^0.18.1
   isar: ^3.1.0+1
   path: ^1.8.3
+  supabase_client: ^0.0.23
+  telegram_client: ^0.5.85
   universal_io: ^2.2.2
   xendit: ^0.0.21
+  zxing2: ^0.2.1
   # path: ^1.8.0
 
 dev_dependencies:
