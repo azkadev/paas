@@ -23,6 +23,18 @@ void main(List<String> args) async {
       "username": "",
       "type": "",
       "is_verified": false,
+      "plan_type": "free",
+    },
+    {
+      "@type": "projectData",
+      "owner_user_id": 0,
+      "name": "",
+      "project_id": "",
+      "environment": {
+        "username": "s"
+      },
+      "file_url": "",
+      "status": "running",
     },
     
   ];
