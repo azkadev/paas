@@ -4,13 +4,13 @@ import "json_dart.dart";
 
 
 
-class AccountData extends JsonScheme {
+class Account extends JsonScheme {
 
   
-  AccountData(super.rawData);
+  Account(super.rawData);
    
   static Map get defaultData {
-    return {"@type":"accountData","id":0,"first_name":"","last_name":"","username":"","type":"","is_verified":false};
+    return {"@type":"account","id":0,"first_name":"","last_name":"","username":"","type":"","is_verified":false,"plan_type":"free","create_date":0,"plan_expired_date":0};
   }
 
   
@@ -105,18 +105,60 @@ class AccountData extends JsonScheme {
 
 
   
-  static AccountData create({
+  String? get plan_type {
+    try {
+      if (rawData["plan_type"] is String == false){
+        return null;
+      }
+      return rawData["plan_type"] as String;
+    } catch (e) {
+      return null;
+    }
+  }
 
-    String special_type = "accountData",
+
+  
+  int? get create_date {
+    try {
+      if (rawData["create_date"] is int == false){
+        return null;
+      }
+      return rawData["create_date"] as int;
+    } catch (e) {
+      return null;
+    }
+  }
+
+
+  
+  int? get plan_expired_date {
+    try {
+      if (rawData["plan_expired_date"] is int == false){
+        return null;
+      }
+      return rawData["plan_expired_date"] as int;
+    } catch (e) {
+      return null;
+    }
+  }
+
+
+  
+  static Account create({
+
+    String special_type = "account",
     int? id,
     String? first_name,
     String? last_name,
     String? username,
     String? type,
     bool? is_verified,
+    String? plan_type,
+    int? create_date,
+    int? plan_expired_date,
 })  {
-    // AccountData accountData = AccountData({
-Map accountData_data_create_json = {
+    // Account account = Account({
+Map account_data_create_json = {
   
       "@type": special_type,
       "id": id,
@@ -125,15 +167,18 @@ Map accountData_data_create_json = {
       "username": username,
       "type": type,
       "is_verified": is_verified,
+      "plan_type": plan_type,
+      "create_date": create_date,
+      "plan_expired_date": plan_expired_date,
 
 
 };
 
 
-          accountData_data_create_json.removeWhere((key, value) => value == null);
-AccountData accountData_data_create = AccountData(accountData_data_create_json);
+          account_data_create_json.removeWhere((key, value) => value == null);
+Account account_data_create = Account(account_data_create_json);
 
-return accountData_data_create;
+return account_data_create;
 
 
 
