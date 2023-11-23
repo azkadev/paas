@@ -24,6 +24,8 @@ void main(List<String> args) async {
       "type": "",
       "is_verified": false,
       "plan_type": "free",
+      "create_date": 0,
+      "plan_expired_date": 0, 
     },
     {
       "@type": "projectData",
