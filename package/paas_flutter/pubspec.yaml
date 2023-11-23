@@ -1,5 +1,5 @@
 name: paas_flutter
-description: A new Flutter FFI plugin project.
+description: A new paas library.
 version: 0.0.0
 repository: https://github.com/azkadev/azkadev.git
 issue_tracker: https://github.com/azkadev/azkadev.git

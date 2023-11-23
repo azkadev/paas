@@ -21,10 +21,10 @@ packages:
     dependency: transitive
     description:
       name: asn1lib
-      sha256: b74e3842a52c61f8819a1ec8444b4de5419b41a7465e69d4aa681445377398b0
+      sha256: "21afe4333076c02877d14f4a89df111e658a6d466cbfc802eb705eb91bd5adfd"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.1"
+    version: "1.5.0"
   async:
     dependency: transitive
     description:
@@ -61,10 +61,10 @@ packages:
     dependency: transitive
     description:
       name: collection
-      sha256: "4a07be6cb69c84d677a6c3096fcf960cc3285a8330b4603e0d463d15d9bd934c"
+      sha256: ee67cb0715911d28db6bf4af1026078bd6f0128b07a5f66fb2ed94ec6783c09a
       url: "https://pub.dev"
     source: hosted
-    version: "1.17.1"
+    version: "1.18.0"
   console:
     dependency: transitive
     description:
@@ -109,10 +109,10 @@ packages:
     dependency: transitive
     description:
       name: encrypt
-      sha256: "4fd4e4fdc21b9d7d4141823e1e6515cd94e7b8d84749504c232999fba25d9bbb"
+      sha256: "62d9aa4670cc2a8798bab89b39fc71b6dfbacf615de6cf5001fb39f7e4a996a2"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.1"
+    version: "5.0.3"
   flare_flutter:
     dependency: transitive
     description:
@@ -139,22 +139,30 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  galaxeus_lib:
+    dependency: transitive
+    description:
+      name: galaxeus_lib
+      sha256: "1a14a2143b21791c2d4d0fc2c89be0e31125ba9095ae49468f39d3b926c5c031"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.94"
   general_lib:
     dependency: "direct main"
     description:
       name: general_lib
-      sha256: "01bc4632d140623ffc58770fa6dc0d1d3f4afe295f4b4b3fa91b0e0ce35cfaec"
+      sha256: a13a609e75b9b3f4bc888dba057d2a96a50d38a5a7fda0e186f29639298207c1
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.74"
+    version: "0.0.1"
   general_lib_flutter:
     dependency: "direct main"
     description:
       name: general_lib_flutter
-      sha256: "036e45332829a7c0535f80327a68575f2e0f2dca9660c6e99e530e1335e88801"
+      sha256: a31f406f184837f63abf3c62b6c3d37ff9aa097dd4dca012f81714369f6a81e1
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.8"
+    version: "0.0.12"
   get_it:
     dependency: transitive
     description:
@@ -231,18 +239,18 @@ packages:
     dependency: transitive
     description:
       name: material_color_utilities
-      sha256: d92141dc6fe1dad30722f9aa826c7fbc896d021d792f80678280601aff8cf724
+      sha256: "9528f2f296073ff54cb9fee677df673ace1218163c3bc7628093e7eed5203d41"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "0.5.0"
   meta:
     dependency: transitive
     description:
       name: meta
-      sha256: "3c74dbf8763d36539f114c799d8a2d87343b5067e9d796ca22b5eb8437090ee3"
+      sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.1"
+    version: "1.10.0"
   msix:
     dependency: "direct dev"
     description:
@@ -464,6 +472,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  web:
+    dependency: transitive
+    description:
+      name: web
+      sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
   xml:
     dependency: transitive
     description:
@@ -481,5 +497,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.0.0 <4.0.0"
+  dart: ">=3.2.0-194.0.dev <4.0.0"
   flutter: ">=3.10.0"
