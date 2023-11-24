@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.13.0"
+  archive:
+    dependency: transitive
+    description:
+      name: archive
+      sha256: "7b875fd4a20b165a3084bd2d210439b22ebc653f21cea4842729c0c30c82596b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.4.9"
   args:
     dependency: transitive
     description:
@@ -145,6 +153,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  cli_util:
+    dependency: transitive
+    description:
+      name: cli_util
+      sha256: b8db3080e59b2503ca9e7922c3df2072cf13992354d5e944074ffa836fba43b7
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.0"
   clock:
     dependency: transitive
     description:
@@ -169,6 +185,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  console:
+    dependency: transitive
+    description:
+      name: console
+      sha256: e04e7824384c5b39389acdd6dc7d33f3efe6b232f6f16d7626f194f6a01ad69a
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.0"
   convert:
     dependency: transitive
     description:
@@ -273,6 +297,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.1"
+  get_it:
+    dependency: transitive
+    description:
+      name: get_it
+      sha256: f79870884de16d689cf9a7d15eedf31ed61d750e813c538a6efb92660fea83c3
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.6.4"
   glob:
     dependency: transitive
     description:
@@ -298,7 +330,7 @@ packages:
     source: hosted
     version: "2.3.1"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: "38dce67ce909c338754840e2a1479c2c11347a2fc7ec3d5b166a5118a8a201db"
@@ -321,6 +353,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  image:
+    dependency: transitive
+    description:
+      name: image
+      sha256: "028f61960d56f26414eb616b48b04eb37d700cbe477b7fb09bf1d7ce57fd9271"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.3"
   intl:
     dependency: "direct main"
     description:
@@ -433,6 +473,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  msix:
+    dependency: "direct dev"
+    description:
+      name: msix
+      sha256: "957d04eee260e4bd15bec1fdb988dfc73718285e201cf89d97ef01ef38e66d4c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.16.6"
   node_preamble:
     dependency: transitive
     description:
@@ -449,6 +497,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  packagex:
+    dependency: "direct dev"
+    description:
+      name: packagex
+      sha256: "2214fb35183d21db209ef17e2a9f3c54af43e915ebab746fd41a0f18e9f87e21"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.31"
   path:
     dependency: "direct main"
     description:
@@ -457,6 +513,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      sha256: eeb2d1428ee7f4170e2bd498827296a18d4e7fc462b71727d111c0ac7707cfa6
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.1"
   pointycastle:
     dependency: transitive
     description:
@@ -721,6 +785,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.2"
+  vector_math:
+    dependency: transitive
+    description:
+      name: vector_math
+      sha256: "80b3257d1492ce4d091729e3a67a60407d227c27241d6927be0130c98e741803"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.4"
   vm_service:
     dependency: transitive
     description:
@@ -785,6 +857,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.21"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      sha256: af5e77e9b83f2f4adc5d3f0a4ece1c7f45a2467b695c2540381bac793e34e556
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.4.2"
   xxh3:
     dependency: transitive
     description:

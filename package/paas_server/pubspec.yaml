@@ -10,6 +10,7 @@ environment:
 dependencies:
   docker_dart: ^0.0.2
   general_lib: ^0.0.1
+  http: ^1.1.1
   intl: ^0.18.1
   isar: ^3.1.0+1
   path: ^1.8.3
@@ -24,4 +25,26 @@ dev_dependencies:
   build_runner: ^2.4.6
   isar_generator: ^3.1.0+1
   lints: ^2.1.0
+  msix: ^3.16.6
+  packagex: ^0.0.31
   test: ^1.24.0
+
+packagex:
+  name: paas_server
+  dart_target: paas_server
+  flutter_target: main
+  dart_name: paas_server
+  flutter_name: paas_server
+  is_without_platform_name: true
+  flutter_commands:
+    obfuscate: true
+    split-debug-info: 0.0.5
+  
+
+msix_config: 
+  display_name: paas_server
+  install_certificate: false
+  # publisher_display_name: Azkadev
+  # identity_name: org.azkadev.paas_server
+  # msix_version: 0.0.0.0
+  # capabilities: internetClient, location, microphone, webcam

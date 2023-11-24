@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=0.0.0
+Name=paas-server
+GenericName=General Application
+Exec=paas-server -- %u
+Categories=Music;Media;
+Keywords=Hello;World;Test;Application;
+StartupNotify=true
+

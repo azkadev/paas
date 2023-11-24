@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+ln -s /usr/share/paas-server/paas_server /usr/bin/paas-server
+chmod +x /usr/bin/paas-server
+exit 0
