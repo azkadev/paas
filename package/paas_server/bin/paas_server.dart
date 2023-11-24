@@ -1,9 +1,12 @@
 // ignore_for_file: non_constant_identifier_names, unused_local_variable, unnecessary_brace_in_string_interps
 
+import 'dart:convert';
 import 'dart:math';
 
 import 'package:general_lib/general_lib.dart';
+import 'package:paas_server/crypto/crypto.dart';
 import 'package:paas_server/docker/docker.dart';
+import 'package:paas_server/paas_server_core.dart';
 import 'package:path/path.dart';
 import 'package:telegram_client/alfred/alfred_io.dart';
 import 'package:universal_io/io.dart';
@@ -12,6 +15,7 @@ void main(List<String> arguments) async {
   Alfred app = Alfred();
   Directory directory_current = Directory.current;
   EventEmitter eventEmitter = EventEmitter();
+  PaasServer paasServer = PaasServer();
 
   String host = Platform.environment["HOST"] ?? "0.0.0.0";
   int port = int.tryParse(Platform.environment["PORT"] ?? "") ?? 8097;
@@ -20,47 +24,48 @@ void main(List<String> arguments) async {
     return res.send("Server ok");
   });
   app.all("/test_docker_build", (req, res) async {
+    print("START create project");
+    Directory directory_new_project = Directory(join(
+      directory_current.path,
+      "project",
+      random_name(),
+    ));
+
+    while (true) {
+      await Future.delayed(Duration(microseconds: 1));
+
+      if (directory_new_project.existsSync()) {
+        directory_new_project = Directory(join(
+          directory_current.path,
+          "project",
+          random_name(),
+        ));
+      } else {
+        await directory_new_project.create(recursive: true);
+        break;
+      }
+    }
+
+    String new_port = "";
+
+    while (true) {
+      await Future.delayed(Duration(microseconds: 1));
+
+      new_port = random_port(skip_ports: [
+        "8080",
+        "9000",
+        "8097",
+      ]);
+
+      try {
+        await get(Uri.parse("http://0.0.0.0:${new_port}"));
+      } catch (e) {
+        break;
+      }
+    }
+
     Future(() async {
-      print("START BUILD");
-      Directory directory_new_project = Directory(join(
-        directory_current.path,
-        "project",
-        random_name(),
-      ));
-
-      while (true) {
-        await Future.delayed(Duration(microseconds: 1));
-
-        if (directory_new_project.existsSync()) {
-          directory_new_project = Directory(join(
-            directory_current.path,
-            "project",
-            random_name(),
-          ));
-        } else {
-          await directory_new_project.create(recursive: true);
-          break;
-        }
-      }
-
       File file_docker_file = File(join(directory_new_project.path, "Dockerfile"));
-      String new_port = "";
-
-      while (true) {
-        await Future.delayed(Duration(microseconds: 1));
-
-        new_port = random_port(skip_ports: [
-          "8080",
-          "9000",
-          "8097",
-        ]);
-
-        try {
-          await get(Uri.parse("http://0.0.0.0:${new_port}"));
-        } catch (e) {
-          break;
-        }
-      }
 
       String docker_file_content = """
 FROM ubuntu
@@ -76,7 +81,9 @@ ENV PORT=${new_port}
 CMD ["paas_server"]
 """
           .trim();
-      await file_docker_file.writeAsString(docker_file_content); 
+      await file_docker_file.writeAsString(docker_file_content);
+
+      print("START BUILD");
       var res = await docker.buildContainer(
         name: basename(directory_new_project.path),
         pathToDockerFile: file_docker_file.path,
@@ -90,24 +97,30 @@ CMD ["paas_server"]
       var run_docker = await docker.runContainer(
         name: basename(directory_new_project.path),
         options: [
-          "--network",
-          "host",
+          //   "--network",
+          //   "host",
           "--restart",
           "always",
           "-v",
           "${directory_new_project.path}:/app",
           "-v",
           "/usr:/usr",
+          "--publish-all",
+          "--net", "customnetwork",
+          "--ip", "172.20.0.10",
         ],
         workingDirectory: directory_new_project.path,
       );
 
       run_docker.rawData.printPretty();
     });
-    return res.send("Procces Build");
+    return res.send("Procces Build: Project Name: ${ basename(directory_new_project.path)} PORT :${new_port}");
   });
 
-  app.all("/api", (req, res) {});
+  app.all("/api", (req, res) async {
+    Map result = await paasServer.requst(parameters: {});
+    return crypto.encrypt(data: json.encode(result));
+  });
 
   await app.listen(
     port,

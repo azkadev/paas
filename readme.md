@@ -23,3 +23,11 @@ cd paas
 ```bash
 dart pub global activate --source path ./package/paas --overwrite
 ```
+
+
+
+## Referensi sumber belajar
+
+1. [DOCKER](https://www.docker.com/)
+   - [Cara mengatur ip static docker container](https://www.howtogeek.com/devops/how-to-assign-a-static-ip-to-a-docker-container/)
+   
