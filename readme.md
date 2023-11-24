@@ -8,3 +8,17 @@ PAAS (Platform As Services ) Sebuah project open source, project ini mencoba ber
 ### Demo
 
 --- 
+
+
+## Installation
+
+### Clone Project / download
+```bash
+git clone https://github.com/azkadev/paas.git
+cd paas
+```
+
+### Activate Cli 
+```bash
+dart pub global activate --source path ./package/paas --overwrite
+```
