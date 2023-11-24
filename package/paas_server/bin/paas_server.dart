@@ -105,9 +105,8 @@ CMD ["paas_server"]
           "${directory_new_project.path}:/app",
           "-v",
           "/usr:/usr",
-          "--publish-all",
           "--net", "paas_network",
-          "--ip", "172.10.0.0",
+          "--ip", "172.22.0.2",
         ],
         workingDirectory: directory_new_project.path,
       );

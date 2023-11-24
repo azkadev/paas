@@ -8,7 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  docker_dart: ^0.0.2
+  docker_dart: ^0.0.3
   general_lib: ^0.0.1
   http: ^1.1.1
   intl: ^0.18.1
