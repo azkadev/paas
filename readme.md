@@ -24,7 +24,12 @@ cd paas
 dart pub global activate --source path ./package/paas --overwrite
 ```
 
+### Set Network
 
+
+```bash
+sudo docker network create --subnet=172.10.0.0/16 paas_network
+```
 
 ## Referensi sumber belajar
 
